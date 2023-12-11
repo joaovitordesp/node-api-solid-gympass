@@ -1,5 +1,5 @@
+import { UsersRepository } from "@/repositories/user-repository";
 import { User, Prisma } from "@prisma/client";
-import { UsersRepository } from "../user-repository";
 
 export class InMemoryUsersRepository implements UsersRepository {
   public items: User[] = [];
@@ -21,6 +21,7 @@ export class InMemoryUsersRepository implements UsersRepository {
       email: data.email,
       password_hash: data.password_hash,
       created_at: new Date(),
+      updated_at: new Date(),
     };
 
     this.items.push(user);
