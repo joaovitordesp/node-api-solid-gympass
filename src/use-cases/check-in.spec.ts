@@ -30,8 +30,8 @@ describe("Check-in Use Case", () => {
       title: "JavaScript Gym",
       description: "",
       phone: "",
-      latitude: -15.8053793,
-      longitude: -48.1101396,
+      latitude: -27.2092052,
+      longitude: -49.6401091,
     });
 
     vi.useFakeTimers();

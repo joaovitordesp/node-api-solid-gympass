@@ -29,11 +29,6 @@ export class CheckInUseCase {
     userLatitude,
     userLongitude,
   }: CheckInUseCaseRequest): Promise<CheckInUseCaseResponse> {
-    const checkIn = await this.checkInsRepository.create({
-      gym_id: gymId,
-      user_id: userId,
-    });
-
     const gym = await this.gymsRepository.findById(gymId);
 
     if (!gym) {
@@ -59,6 +54,11 @@ export class CheckInUseCase {
     if (checkInOnSameDay) {
       throw new MaxNumberOfCheckInsError();
     }
+
+    const checkIn = await this.checkInsRepository.create({
+      gym_id: gymId,
+      user_id: userId,
+    });
 
     return {
       checkIn,
