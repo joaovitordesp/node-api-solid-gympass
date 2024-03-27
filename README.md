@@ -51,11 +51,14 @@ npx prisma init (tem que ter a extensão do prisma instalada)
      "[prisma]": {
       "editor.formatOnSave": true
     },
+npx prisma migrate dev <- roda as migrate
+npm prisma studio <- mostra como estão as tabela em modo gráfico
+
 npm i @prisma/client <- dependecy prd to access the database
 npm i -D npm-run-all <- execute scripts inside package.json and do automatically a conversion in the script to the user SO
 
 docker run --name api-solid-pg -e POSTGRESQL_USERNAME=docker -e POSTGRESQL_PASSWORD=docker -e POSTGRESQL_DATABASE=apisolid -p 5432:5432 bitnami/postgresql
-
+docker ps <- list containers avaible
 docker compose up -d  (-d de detach, ou seja, não aparece o log)
 docker compose stop
 
